@@ -16,7 +16,7 @@ class Bot:
     def tweet(self):
         # つぶやく
         now = datetime.datetime.now()
-        now_datetime = "{}月{}日({}) {}時ちょうど".format(now.month, now.day, self.weekdays[now.weekday()], now.hour)
+        now_datetime = "{}月{}日({}) {}:00".format(now.month, now.day, self.weekdays[now.weekday()], now.hour)
         headline_news = self.news.get_headline_news()
         tweet = self.generate_tweet("template", "tweet.j2", {"time": now_datetime, "news": headline_news})
 
