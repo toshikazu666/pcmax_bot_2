@@ -3,13 +3,14 @@ from bs4 import BeautifulSoup
 
 class Pcmax:
     def __init__(self, login_url, tweet_post_url, user, password):
+        # PCMAXのインターフェース
         self.login_url = login_url
         self.user = user
         self.password = password
         self.tweet_post_url = tweet_post_url
 
     def login(self):
-        # ピシマにログインしてセッションを作る
+        # ログインしてセッションを作る
         self.session = requests.session()
         login_info = {
             "login_id": self.user,
