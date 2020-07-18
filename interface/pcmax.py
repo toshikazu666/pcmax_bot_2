@@ -24,7 +24,7 @@ class Pcmax:
     def get_tweet_input(self):
         # つぶやきのPOSTに必要なinputを取得する
         res = self.session.get(self.tweet_post_url)
-        soup = BeautifulSoup(res.text, "lxml")
+        soup = BeautifulSoup(res.text, "html.parser")
         write_form = soup.find(id="write_form")
         inputs = write_form.find_all("input")
         return {i["name"]: i["value"] for i in inputs}
